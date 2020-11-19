@@ -14,7 +14,7 @@
   <form ng-submit="addDetails()" name="todoForm">
     <input
       type="text"
-      placeholder="Add Todo"
+      placeholder="Enter Todo"
       ng-model="newTodo.list"
       ng-required="true"
       name="todo"
@@ -24,7 +24,7 @@
         >Enter a Todo</small
       >
     </div>
-    <input type="submit" value="Add Details" ng-disabled="todoForm.$invalid" />
+    <input type="submit" value="Add Todo" ng-disabled="todoForm.$invalid" />
   </form>
   <button ng-click="removeAllTodo()">Remove All</button>
 </div>
