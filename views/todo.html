@@ -1,0 +1,18 @@
+<div class="content">
+  <h1>Your Todo App</h1>
+  <input type="text" ng-model="search" placeholder="Search Your Todo" />
+  <ul>
+    <li ng-repeat="todo in todos | orderBy:order | filter:search">
+      <div ng-click="statusOfTodo(todo)">
+        <h3>
+          <span style="text-decoration: {{ todo.style }}">{{todo.list}}</span>
+        </h3>
+        <div class="remove" ng-click="removeTodo(todo)">x</div>
+      </div>
+    </li>
+  </ul>
+  <form ng-submit="addDetails()">
+    <input type="text" placeholder="Add Todo" ng-model="newTodo.list" />
+    <input type="submit" value="Add Details" />
+  </form>
+</div>
