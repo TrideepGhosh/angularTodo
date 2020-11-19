@@ -1,7 +1,6 @@
 let nameApp = angular.module('nameApp',['ngRoute','ngAnimate'])
 
-nameApp.config(['$routeProvider','$locationProvider',($routeProvider,$locationProvider)=>{
-    $locationProvider.html5Mode(true)
+nameApp.config(['$routeProvider',($routeProvider)=>{
     $routeProvider
     .when('/home',{
         templateUrl:'views/home.html'
