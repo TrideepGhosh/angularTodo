@@ -1,6 +1,7 @@
-let nameApp = angular.module('nameApp',['ngRoute'])
+let nameApp = angular.module('nameApp',['ngRoute','ngAnimate'])
 
-nameApp.config(['$routeProvider',($routeProvider)=>{
+nameApp.config(['$routeProvider','$locationProvider',($routeProvider,$locationProvider)=>{
+    $locationProvider.html5Mode(true)
     $routeProvider
     .when('/home',{
         templateUrl:'views/home.html'
@@ -27,7 +28,9 @@ nameApp.controller('todoController',['$scope',function($scope){
         })
         $scope.newTodo.list = ''
     }
-
+    $scope.removeAllTodo = () => {
+        $scope.todos = []
+    }
     $scope.statusOfTodo = (todo) =>{
         let index = $scope.todos.indexOf(todo)
         if (todo.style == 'none') {

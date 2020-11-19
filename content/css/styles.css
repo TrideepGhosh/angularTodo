@@ -109,6 +109,7 @@ p {
   border-radius: 10px;
   border: 2px solid #ddd;
   margin: 10px 0;
+  outline: none;
 }
 
 .content input[type="submit"]:last-child {
@@ -127,4 +128,51 @@ p {
   color: crimson;
   cursor: pointer;
   margin-left: 10px;
+}
+
+/* Animation */
+/* The starting CSS styles for the enter animation */
+main.ng-enter {
+  transition: 0.5s linear all;
+  opacity: 0;
+}
+
+/* The finishing CSS styles for the enter animation */
+main.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+#todo-list li.ng-enter {
+  transition: 0.5s linear all;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+#todo-list li.ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#todo-list li.ng-leave {
+  transition: 0.3s linear all;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#todo-list li.ng-leave.ng-leave-active {
+  opacity: 0;
+  transform: translateX(100%);
+}
+#todo-list li.ng-leave-stagger {
+  transition-delay: 0.2s;
+  transition-duration: 0;
+}
+
+input.ng-invalid.ng-touched {
+  border: 2px solid red;
+}
+
+input[disabled="disabled"] {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
